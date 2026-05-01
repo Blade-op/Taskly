@@ -8,6 +8,7 @@ import {
   useSidebar,
 } from "@/components/ui/sidebar";
 import { cn } from "@/lib/utils";
+import { Logo } from "@/components/Logo";
 
 const MAIN_NAV = [
   { title: "Dashboard", url: "/",         icon: LayoutDashboard },
@@ -51,13 +52,11 @@ export function AppSidebar() {
       {/* Logo */}
       <SidebarHeader className="border-b border-sidebar-border">
         <div className={cn("flex items-center gap-2.5 px-2 py-2", collapsed && "justify-center px-0")}>
-          <div className="h-9 w-9 rounded-xl bg-gradient-primary flex items-center justify-center shadow-glow shrink-0">
-            <CheckSquare2 className="h-5 w-5 text-white" strokeWidth={2.5} />
-          </div>
+          <Logo className={cn("shrink-0", collapsed ? "h-8 w-8" : "h-9 w-9")} />
           {!collapsed && (
             <div className="flex flex-col leading-tight">
-              <span className="font-bold text-sm tracking-tight">Taskly</span>
-              <span className="text-[10px] text-muted-foreground font-medium">Team workspace</span>
+              <span className="font-bold text-sm tracking-tight text-[#0284c7]">TASKLY</span>
+              <span className="text-[10px] text-muted-foreground font-medium uppercase tracking-wider">Team Task Manager</span>
             </div>
           )}
         </div>

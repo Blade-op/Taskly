@@ -11,6 +11,7 @@ import { cn } from "@/lib/utils";
 import { toast } from "sonner";
 import { api } from "@/lib/api";
 import { useStore } from "@/context/AppContext";
+import { Logo } from "@/components/Logo";
 
 interface AuthProps {
   mode: "login" | "signup";
@@ -58,10 +59,11 @@ export default function Auth({ mode }: AuthProps) {
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-primary-glow/10" />
         <div className="relative z-10 max-w-md">
           <Link to="/" className="flex items-center gap-2.5 mb-12">
-            <div className="h-10 w-10 rounded-xl bg-gradient-primary flex items-center justify-center shadow-glow">
-              <CheckSquare2 className="h-5 w-5 text-white" strokeWidth={2.5} />
+            <Logo className="h-12 w-12 shrink-0" />
+            <div className="flex flex-col leading-tight">
+              <span className="font-bold text-xl tracking-tight text-[#0284c7]">TASKLY</span>
+              <span className="text-xs text-muted-foreground font-medium uppercase tracking-wider">Team Task Manager</span>
             </div>
-            <span className="font-bold text-lg">Taskly</span>
           </Link>
 
           <div className="space-y-6">
@@ -110,10 +112,10 @@ export default function Auth({ mode }: AuthProps) {
         <div className="w-full max-w-md space-y-8">
           {/* Mobile logo */}
           <Link to="/" className="lg:hidden flex items-center gap-2.5 mb-4">
-            <div className="h-9 w-9 rounded-xl bg-gradient-primary flex items-center justify-center shadow-glow">
-              <CheckSquare2 className="h-4 w-4 text-white" strokeWidth={2.5} />
+            <Logo className="h-10 w-10 shrink-0" />
+            <div className="flex flex-col leading-tight">
+              <span className="font-bold text-lg tracking-tight text-[#0284c7]">TASKLY</span>
             </div>
-            <span className="font-bold">Taskly</span>
           </Link>
 
           <div>
